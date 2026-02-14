@@ -1,0 +1,43 @@
+{
+  "name": "maritime-monitor",
+  "description": "Real-time maritime intelligence monitoring system with shipping, trade routes, piracy, weather, and policy tracking",
+  "version": "1.0.0",
+  "type": "module",
+  "private": false,
+  "author": "Tom D'Eletto",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview",
+    "test": "node --test tests/**/*.test.mjs",
+    "test:data": "node --test tests/maritime-data.test.mjs",
+    "lint": "tsc",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vite-plugin-pwa": "^1.2.0"
+  },
+  "dependencies": {
+    "@deck.gl/aggregation-layers": "^9.2.6",
+    "@deck.gl/core": "^9.2.6",
+    "@deck.gl/geo-layers": "^9.2.6",
+    "@deck.gl/layers": "^9.2.6",
+    "@deck.gl/mapbox": "^9.2.6",
+    "@upstash/redis": "^1.36.1",
+    "d3": "^7.9.0",
+    "deck.gl": "^9.2.6",
+    "maplibre-gl": "^5.16.0",
+    "topojson-client": "^3.1.0",
+    "node-fetch": "^3.3.0",
+    "xml2js": "^0.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
