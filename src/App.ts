@@ -38,10 +38,17 @@ class MaritimeMonitorApp {
     try {
       console.log('[Maritime Monitor] Initializing...');
 
-      // Initialize map
-      const mapContainer = document.getElementById('map');
+      // Wait for map container to be in the DOM
+      let mapContainer = document.getElementById('map');
+      let attempts = 0;
+      while (!mapContainer && attempts < 10) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+        mapContainer = document.getElementById('map');
+        attempts++;
+      }
+
       if (!mapContainer) {
-        throw new Error('Map container not found');
+        throw new Error('Map container not found after waiting');
       }
 
       this.mapController.initialize({
