@@ -375,7 +375,7 @@ class MaritimeStore {
     );
   }
 
-  getFiltered Vessels(): Vessel[] {
+  getFilteredVessels(): Vessel[] {
     let filtered = [...this.state.vessels];
 
     // Apply vessel type filter
