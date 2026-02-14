@@ -14,15 +14,6 @@ export default defineConfig({
     target: 'ES2020',
     minify: 'terser',
     sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'deck-gl': ['@deck.gl/core', '@deck.gl/layers', '@deck.gl/geo-layers'],
-          'map-libraries': ['maplibre-gl', 'topojson-client'],
-          'd3-libs': ['d3'],
-        },
-      },
-    },
   },
   plugins: [],
   resolve: {
@@ -32,14 +23,5 @@ export default defineConfig({
   },
   define: {
     'process.env.NODE_ENV': '"development"',
-  },
-  optimizeDeps: {
-    include: [
-      '@deck.gl/core',
-      '@deck.gl/layers',
-      'maplibre-gl',
-      'd3',
-      'topojson-client',
-    ],
   },
 });
